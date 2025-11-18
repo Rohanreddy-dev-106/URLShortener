@@ -14,7 +14,7 @@ export default class Createcontroller {
             const shortUrl = nanoid(8);
             const { url, click } = req.body;
 
-            const urldoc = new model(url, shortUrl, click);
+            const urldoc = new model(url, shortUrl, click,new Date);
 
             const result = await this.Creatrepo.Create(urldoc);
 

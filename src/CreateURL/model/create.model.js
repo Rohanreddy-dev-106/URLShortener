@@ -3,9 +3,11 @@ export default class CreateURL {
   BaseURL;
   ShortURL;
   Clickcount;
-  constructor(url, shorturl, click) {
+  CreatedTime;
+  constructor(url, shorturl, click,Time) {
     this.BaseURL = url;
     this.ShortURL = shorturl;
     this.Clickcount = click;
+    this.CreatedTime=Time;
   }
 }

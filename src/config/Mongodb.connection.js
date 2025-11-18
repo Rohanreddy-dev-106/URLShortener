@@ -9,6 +9,7 @@ async function ConnecttTomongodb() {
     const clint = await mongodb.MongoClient.connect(url);
     clintDB = clint;
     console.log("Mongodb is connected...");
+     Index(clintDB.db())
   } catch (error) {
     console.log(error.message);
   }
@@ -19,5 +20,9 @@ function GetDb() {
   } else {
     return clintDB.db();
   }
+}
+
+async function Index(db) {
+    await db.collection("url").createIndex({BaseURL: 1 });
 }
 export { ConnecttTomongodb, GetDb };
